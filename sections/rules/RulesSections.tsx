@@ -115,8 +115,8 @@ export default function RulesSections() {
               thắng bại.
             </p>
             <p>
-              Trò chơi dành cho <strong className="text-earth-500">2–6 người</strong>, mỗi ván kéo dài
-              <strong className="text-earth-500"> 45–90 phút</strong>. Độ tuổi phù hợp: <strong className="text-earth-500">12+</strong>.
+              Trò chơi dành cho <strong className="text-earth-500">2 người</strong>, mỗi ván kéo dài
+              <strong className="text-earth-500"> 30–45 phút</strong>. Độ tuổi phù hợp: <strong className="text-earth-500">9+</strong>.
             </p>
           </div>
 
@@ -173,11 +173,10 @@ export default function RulesSections() {
         <SectionWrap anchor="sec-vat-dung" number={4} icon="🎴" label="Phần 4"
           title="Các vật dụng trong trò chơi" subtitle="Thành phần trong hộp game" accentColor="#7A4E2D">
           <InfoCard accentColor="#7A4E2D" items={[
-            { title: '120 Thẻ quân lính', body: 'Bộ binh (30), Kỵ binh (25), Cung thủ (15), Thủy binh (10), Cựu binh (10), Đại tướng (6 × 5 phe). Mỗi thẻ ghi rõ LL, SM cơ bản và kỹ năng đặc biệt.' },
+            { title: '120 Thẻ quân lính', body: 'Bộ binh (30), Kỵ binh (25), Cung thủ (15), Thủy binh (10), Cựu binh (10), Đại tướng (12). Mỗi thẻ ghi rõ LL, SM cơ bản và kỹ năng đặc biệt.' },
             { title: '1 Bản đồ chiến trường', body: 'Bản đồ dạng lưới gồm 5 loại Ô đất: Đồng bằng, Rừng, Núi, Sông/Biển, Thành. Có đánh số tọa độ để ghi lệnh bí mật (HĐ3).' },
             { title: '30 Thẻ Thời tiết', body: 'Xáo trộn vào bộ bài chung. Rút 1 thẻ/lượt ở HĐ1. Có thể làm tăng/giảm LT thu được, phong tỏa di chuyển trên sông, hoặc tăng SM Cung thủ.' },
             { title: '60 Thẻ Kỹ năng', body: 'Mỗi Tướng lĩnh có bộ thẻ kỹ năng riêng. Rút theo số quy định ở HĐ1. Dùng trong HĐ2 (viện binh) hoặc HĐ4 (chiến đấu đặc biệt).' },
-            { title: '50 Thẻ Token địa hình/Thành', body: 'Đặt lên bản đồ để đánh dấu Ô đất đang bị kiểm soát bởi phe nào. Cũng dùng để đánh dấu Thành bị chiếm.' },
             { title: '2 Xúc xắc D8', body: 'Dùng khi cần phân định trong một số trường hợp đặc biệt được ghi rõ trong thẻ Kỹ năng hoặc Thời tiết.' },
           ]} />
         </SectionWrap>
@@ -354,44 +353,26 @@ export default function RulesSections() {
         <SectionWrap anchor="sec-giao-tranh" number={8} icon="⚔" label="Phần 8"
           title="Cơ chế Giao tranh" subtitle="Cách tính tổn thất trong chiến đấu" accentColor="#A52A2A">
           <InfoCard accentColor="#A52A2A" items={[
-            { title: 'Điều kiện xảy ra Giao tranh', body: 'Hai Đạo quân di chuyển vào cùng một Ô đất trong HĐ4, hoặc một bên chủ động tấn công Ô đất kề cạnh bằng thẻ Kỹ năng.' },
+            { title: 'Điều kiện xảy ra Giao tranh', body: 'Hai Đạo quân di chuyển vào cùng một Ô đất trong HĐ4.' },
             { title: 'Tính SM trước khi giao tranh', body: 'SM = (Tổng LL của tất cả Toàn quân) × hệ số địa hình × hệ số TT. Địa hình Núi tăng SM Cung thủ ×2. Tính riêng cho mỗi bên.' },
             { title: 'Nhịp chiến đấu', body: 'Mỗi Nhịp: bên có SM cao hơn gây tổn thất LL = (SM chênh lệch ÷ SM bên địch) × LL bên địch. Làm tròn xuống. Cập nhật LL → tính lại SM → Nhịp tiếp theo.' },
-            { title: 'Rút lui', body: 'Trước mỗi Nhịp, bên đang thua có thể tuyên bố Rút lui. Di chuyển toàn Đạo quân về Ô đất kề cạnh đã kiểm soát. Không thể rút về Ô đất địch đang kiểm soát.' },
-            { title: 'Kết thúc Giao tranh', body: 'Giao tranh kết thúc khi: một bên LL = 0, hoặc một bên Rút lui, hoặc TT của một bên về 0% do thiệt hại quá lớn. Bên chiến thắng ở lại kiểm soát Ô đất.' },
+            { title: 'Kết thúc Giao tranh', body: 'Giao tranh kết thúc khi: một bên LL = 0, hoặc TT của một bên về 0% do thiệt hại quá lớn. Bên chiến thắng ở lại kiểm soát Ô đất.' },
           ]} />
 
-          {/* Formula box */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="mt-6 p-5 rounded-sm"
-            style={{ background: 'linear-gradient(135deg, rgba(165,42,42,0.08), rgba(122,31,31,0.05))', border: '1px solid rgba(165,42,42,0.3)', borderLeft: '3px solid #A52A2A' }}
-          >
-            <p className="font-cinzel text-xs tracking-[0.25em] text-crimson-300 uppercase mb-3">Công thức tính tổn thất</p>
-            <div className="space-y-2">
-              <div className="font-cinzel text-earth-500 text-sm">
-                <span className="text-crimson-300">SM</span> = Tổng LL × Hệ số địa hình × Hệ số TT
-              </div>
-              <div className="font-cinzel text-earth-500 text-sm">
-                <span className="text-crimson-300">LL mất</span> = ⌊ (SM_ta − SM_địch) ÷ SM_địch × LL_địch ⌋
-              </div>
-            </div>
-          </motion.div>
+
         </SectionWrap>
 
         {/* 9 — Lưu ý */}
         <SectionWrap anchor="sec-luu-y" number={9} icon="⚠" label="Phần 9"
           title="Lưu ý & Trường hợp đặc biệt" subtitle="Các tình huống ngoại lệ cần xử lý riêng" accentColor="#7A1F1F">
           <InfoCard accentColor="#7A1F1F" items={[
-            { title: 'Hai Đạo quân cùng đến một ô trong HĐ3', body: 'Nếu lệnh di chuyển bí mật khiến hai Đạo quân từ hai phía cùng vào một ô, Giao tranh xảy ra ngay tại ô đó. Không bên nào được ưu tiên đứng trước.' },
-            { title: 'Đại tướng bị cô lập', body: 'Nếu Tướng lĩnh bị bao vây (không có Toàn quân nào còn ở cùng ô), người chơi phải di chuyển Tướng về ô có Toàn quân trong HĐ3 tiếp theo. Tướng không thể chiến đấu một mình.' },
-            { title: 'Hết thẻ Thời tiết', body: 'Nếu bộ bài Thời tiết hết trước khi ván kết thúc, xáo lại toàn bộ bài đã dùng và tiếp tục. Không có hiệu ứng nào kéo dài sang bộ bài mới.' },
-            { title: 'Hòa LT trong Thu hoạch', body: 'Nếu hai người cùng kiểm soát một Ô đất LT ngay đầu HĐ2 (tình huống hiếm), không ai thu được LT từ ô đó lượt đó. Cần Giao tranh trước ở HĐ4 để phân định.' },
-            { title: 'Kỵ binh qua ô Rừng', body: 'Kỵ binh không thể di chuyển qua Ô Rừng trong một lệnh liên tục. Phải dừng lại ở ô Rừng và dùng thêm 1 lượt để tiếp tục. Chỉ áp dụng cho đường chéo xuyên Rừng.' },
-            { title: 'Nhiều Toàn quân hội tụ Giao tranh', body: 'Trong một Giao tranh, tổng SM của toàn bộ Đạo quân (mọi loại Toàn quân cộng lại) mới là SM đại diện cho bên đó. Không tính riêng từng Toàn quân.' },
+            { title: '1. Về việc viện binh', body: 'Binh chủng nhận được là tùy chọn theo ý muốn (miễn là binh chủng ấy còn dư Token), lần lượt từ Đại Việt tới Mông Nguyên.' },
+            { title: '2. Chọn Chủ tướng và Phó tướng', body: 'Cần đặt Token đại diện cho 2 vai trò này vào bản đồ nhỏ. Mỗi tướng (Chủ tướng/Phó tướng) cần di chuyển cùng đạo quân của phe mình. Nếu đạo quân đó bị tiêu diệt (bao gồm cả tướng), toàn quân sẽ chịu hình phạt (đã ghi ở khâu chuẩn bị).' },
+            { title: '3. Cơ chế mua lượt di chuyển', body: 'Ở bước thứ hai trở đi: Mỗi LL sẽ tốn 1 LT. VD: Mua lượt di chuyển cho đạo quân gồm 5 LL ⟶ Tốn 5 LT.' },
+            { title: '4. Hòa Sức Mạnh khi Giao tranh', body: 'Nếu xảy ra "Giao tranh" mà SM của hai bên bằng nhau, bên phòng thủ sẽ giành được ô đất và được giữ lại 1 LL chứ không bị tiêu diệt hết.' },
+            { title: '5. Hết Token', body: 'Trong quá trình chơi, nếu hết Token loại nào thì khi 2 bên nhận Token loại đó sẽ không được lấy nữa.' },
+            { title: '6. Hết Thẻ Thời Tiết', body: 'Nếu sau khi bốc 20 thẻ Thời tiết mà ván chơi vẫn chưa kết thúc, hai bên xáo lại toàn bộ bài đã dùng và bốc như ban đầu.' },
+            { title: '7. Tráo đổi Token', body: 'Trong quá trình chơi, người chơi có thể tráo đổi các Token LL, LT đang có với các Token chưa sử dụng để đa dạng hơn cho việc điều quân nhưng các Token được trao đổi cần có cùng binh chủng, số lượng.' },
           ]} />
         </SectionWrap>
 

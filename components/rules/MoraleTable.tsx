@@ -137,15 +137,7 @@ export default function MoraleTable() {
         ))}
       </div>
 
-      {/* Note */}
-      <div className="mt-4 p-3 rounded-sm border-l-3"
-           style={{ background: 'rgba(201,163,106,0.08)', borderLeft: '3px solid rgba(201,163,106,0.5)' }}>
-        <p className="font-cinzel text-[10px] tracking-widest text-parchment-400 uppercase mb-1">Lưu ý</p>
-        <p className="font-garamond text-earth-400 text-sm leading-relaxed">
-          TT được tính lại mỗi lượt trong HĐ2 (Thu hoạch). Thiếu LT sẽ làm TT giảm nhanh.
-          Khi TT = 0%, Đạo quân tan rã và người chơi đó thua ngay lập tức.
-        </p>
-      </div>
+
     </div>
   )
 }

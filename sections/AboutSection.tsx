@@ -8,7 +8,7 @@ import CrossedSwords from '@/components/CrossedSwords'
 const STATS = [
   { num: '2',   label: 'Người chơi', sub: 'Đại Việt vs Mông Nguyên' },
   { num: "45'", label: 'Mỗi ván',    sub: 'Thời gian chơi' },
-  { num: '12+', label: 'Độ tuổi',    sub: 'Phù hợp' },
+  { num: '9+', label: 'Độ tuổi',    sub: 'Phù hợp' },
 ]
 
 const HIGHLIGHTS = [

@@ -294,7 +294,11 @@ export default function OrderPreviewSection() {
                   </ul>
                 </div>
 
-                <div className="flex flex-col gap-3 mt-4">
+                <div className="flex flex-col gap-3 mt-2">
+                  <div className="flex items-end gap-3 mb-1">
+                    <span className="font-cinzel font-bold text-parchment-200 text-3xl">419.000đ</span>
+                    <span className="font-cinzel text-crimson-300 text-sm tracking-widest uppercase mb-1">Giá ưu đãi</span>
+                  </div>
                   <AnimatePresence mode="wait">
                     {isOrdered ? (
                       <motion.div key="ordered"
