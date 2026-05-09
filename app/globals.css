@@ -434,6 +434,7 @@ body {
   backdrop-filter: blur(8px);
   transition: all 0.25s ease;
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  opacity: 0.3;
 }
 .scroll-to-top:hover {
   background: var(--red-son);
@@ -441,6 +442,7 @@ body {
   color: var(--parchment-light);
   box-shadow: 0 0 16px rgba(165,42,42,0.5);
   transform: translateY(-2px);
+  opacity: 1;
 }
 
 /* ─── Particle dust ─── */

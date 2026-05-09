@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
+import CrossedSwords from '@/components/CrossedSwords'
 
 const STATS = [
   { num: '2',   label: 'Người chơi', sub: 'Đại Việt vs Mông Nguyên' },
@@ -49,8 +51,8 @@ export default function AboutSection() {
                 <span key={pos} className={`absolute ${pos} text-parchment-400/50 text-lg`} aria-hidden="true">✦</span>
               ))}
 
-              <p className="font-cinzel text-[10px] tracking-[0.3em] text-crimson-300 mb-4 uppercase">
-                ⚔ Câu chuyện dự án
+              <p className="font-cinzel text-[10px] tracking-[0.3em] text-crimson-300 mb-4 uppercase flex items-center gap-1.5">
+                <CrossedSwords size={14} /> Câu chuyện dự án
               </p>
               <h3 className="font-cinzel font-bold text-earth-500 text-xl md:text-2xl mb-5 leading-snug">
                 Boardgame chiến thuật lấy cảm hứng từ thời Trần
@@ -97,57 +99,27 @@ export default function AboutSection() {
             </div>
           </motion.div>
 
-          {/* Right — visual */}
+          {/* Right — poster image */}
           <motion.div
             initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
             className="relative"
           >
-            {/* Main artwork box */}
-            <div className="relative rounded-sm overflow-hidden border-2 border-parchment-400/50
-                            shadow-parchment-xl aspect-[4/5]"
-                 style={{ background: 'linear-gradient(135deg, #1A0E06 0%, #2A1C12 40%, #3B2A1E 100%)' }}>
-
-              {/* Battle map grid overlay */}
-              <div className="absolute inset-0 opacity-[0.08]"
-                style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0 60L60 0M-10 10L10-10M50 70L70 50' stroke='%23C9A36A' stroke-width='0.5' fill='none'/%3E%3C/svg%3E")`,
-                  backgroundSize: '60px 60px' }}
+            {/* Poster image */}
+            <div
+              className="relative rounded-sm overflow-hidden shadow-parchment-xl"
+              style={{
+                filter: 'drop-shadow(0 0 40px rgba(201,163,106,0.2)) drop-shadow(0 20px 40px rgba(0,0,0,0.5))',
+              }}
+            >
+              <Image
+                src="/images/poster2.jpg"
+                alt="Poster Bách Chiến Trận Đồ - Bộ Board Game"
+                width={600}
+                height={750}
+                className="w-full h-auto rounded-sm"
+                style={{ border: '2px solid rgba(201,163,106,0.3)', objectFit: 'cover' }}
               />
-
-              {/* Atmospheric glow */}
-              <div className="absolute inset-0"
-                style={{ background: 'radial-gradient(ellipse at 50% 40%, rgba(165,42,42,0.15) 0%, transparent 60%)' }} />
-
-              {/* Center content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-                <motion.div
-                  animate={{ rotate: [0, 5, -5, 0], scale: [1, 1.05, 1] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-                  className="text-8xl mb-6 drop-shadow-2xl" aria-hidden="true">
-                  ⚔
-                </motion.div>
-                <p className="font-cinzel font-bold text-parchment-200 text-xl tracking-widest mb-2">
-                  BÁCH CHIẾN TRẬN ĐỒ
-                </p>
-                <p className="font-garamond text-parchment-400/60 text-sm italic">
-                  Chiến trường Đại Việt · 1285
-                </p>
-                <div className="mt-6 flex items-center gap-3">
-                  <div className="h-px w-12 bg-gradient-to-r from-transparent to-parchment-400/50" />
-                  <span className="text-parchment-400/40 text-xs">⚜</span>
-                  <div className="h-px w-12 bg-gradient-to-l from-transparent to-parchment-400/50" />
-                </div>
-              </div>
-
-              {/* Corner decorations */}
-              {[
-                'top-4 left-4',
-                'top-4 right-4 scale-x-[-1]',
-                'bottom-4 left-4 rotate-180 scale-x-[-1]',
-                'bottom-4 right-4 rotate-180',
-              ].map(pos => (
-                <span key={pos} className={`absolute ${pos} text-parchment-400/30 text-2xl`} aria-hidden="true">❧</span>
-              ))}
             </div>
 
             {/* Floating badge */}

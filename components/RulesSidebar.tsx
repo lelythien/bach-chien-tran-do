@@ -2,12 +2,13 @@
 
 import { useEffect, useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, ChevronLeft } from 'lucide-react'
 import { NAV_SECTIONS } from '@/lib/rulesData'
 
 export default function RulesSidebar() {
   const [activeId, setActiveId] = useState<string>(NAV_SECTIONS[0].anchor)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [desktopHover, setDesktopHover] = useState(false)
   const observerRef = useRef<IntersectionObserver | null>(null)
 
   useEffect(() => {
@@ -41,34 +42,47 @@ export default function RulesSidebar() {
   return (
     <>
       {/* Desktop: fixed right panel on xl+ */}
-      <aside className="hidden xl:block fixed right-6 top-24 z-30 w-52">
-        <div className="card-parchment p-4 rounded-sm">
-          <p className="font-cinzel text-[10px] tracking-[0.25em] text-crimson-300 uppercase mb-3">Mục lục</p>
-          <nav className="space-y-0.5">
+      <aside 
+        className="hidden xl:flex fixed right-0 top-[12%] z-30 transition-transform duration-500 ease-out"
+        onMouseEnter={() => setDesktopHover(true)}
+        onMouseLeave={() => setDesktopHover(false)}
+        style={{ transform: desktopHover ? 'translateX(0)' : 'translateX(calc(100% - 36px))' }}
+      >
+        {/* Handle / Trigger */}
+        <div className="w-9 bg-[#1A0E06]/95 backdrop-blur-md border-y border-l border-parchment-400/20 rounded-l-md flex flex-col items-center justify-center py-6 shadow-[-4px_0_15px_rgba(0,0,0,0.5)] cursor-pointer">
+          <span className="[writing-mode:vertical-lr] font-cinzel text-[12px] font-bold tracking-widest text-parchment-200 uppercase rotate-180">
+            Mục lục
+          </span>
+          <ChevronLeft size={16} className={`mt-3 text-parchment-300 transition-transform duration-500 ${desktopHover ? 'rotate-180' : ''}`} />
+        </div>
+
+        {/* Content Area */}
+        <div className="w-60 bg-[#1A0E06]/95 backdrop-blur-md border-y border-l border-parchment-400/20 p-5 shadow-[-8px_0_30px_rgba(0,0,0,0.6)]">
+          <p className="font-cinzel text-[10px] tracking-[0.25em] text-crimson-300 uppercase mb-4 border-b border-parchment-400/10 pb-2">
+            Nội dung
+          </p>
+          <nav className="space-y-1">
             {NAV_SECTIONS.map((s, i) => {
               const isActive = activeId === s.anchor
               return (
-                <motion.button
+                <button
                   key={s.anchor}
-                  initial={{ opacity: 0, x: 12 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.04 }}
                   onClick={() => scrollTo(s.anchor)}
-                  className={`w-full flex items-center gap-2 px-3 py-2 rounded-sm text-left
+                  className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-sm text-left
                              transition-all duration-200
-                             ${isActive ? 'bg-earth-500 text-parchment-200' : 'text-earth-400 hover:bg-earth-500/10 hover:text-earth-500'}`}
+                             ${isActive ? 'bg-parchment-400/10 text-parchment-200' : 'text-parchment-300/60 hover:bg-parchment-400/5 hover:text-parchment-300'}`}
                 >
                   <span className="text-sm flex-shrink-0">{s.icon}</span>
-                  <span className="font-cinzel text-[11px] tracking-wide leading-tight flex-1">{s.label}</span>
+                  <span className="font-cinzel text-[11px] tracking-wider leading-tight flex-1">{s.label}</span>
                   {isActive && (
-                    <motion.span layoutId="sidebar-dot" className="w-1.5 h-1.5 rounded-full bg-parchment-400 flex-shrink-0" />
+                    <motion.span layoutId="sidebar-dot" className="w-1.5 h-1.5 rounded-full bg-crimson-400 flex-shrink-0" />
                   )}
-                </motion.button>
+                </button>
               )
             })}
           </nav>
-          <div className="mt-4 pt-3 border-t border-parchment-400/30">
-            <p className="font-garamond text-earth-400/50 text-xs italic text-center leading-snug">
+          <div className="mt-5 pt-4 border-t border-parchment-400/10">
+            <p className="font-garamond text-parchment-300/30 text-xs italic text-center leading-relaxed">
               "Biết người biết ta,<br />trăm trận trăm thắng"
             </p>
           </div>

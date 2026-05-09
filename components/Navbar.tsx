@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { NAV_LINKS, SITE_NAME } from '@/lib/constants'
 import { useAuth } from '@/lib/authContext'
+import CrossedSwords from '@/components/CrossedSwords'
 
 export default function Navbar() {
   const { user, loginWithGoogle, logout, loading } = useAuth()
@@ -78,12 +79,10 @@ export default function Navbar() {
 
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group" aria-label="Trang chủ">
-              <motion.span
+              <CrossedSwords
+                size={scrolled ? 18 : 22}
                 className="text-parchment-400 transition-transform group-hover:scale-110"
-                style={{ fontSize: scrolled ? '1.1rem' : '1.3rem', transition: 'font-size 0.3s ease' }}
-              >
-                ⚔
-              </motion.span>
+              />
               <span
                 className="font-cinzel font-bold text-parchment-200 tracking-widest
                            group-hover:text-parchment-400 transition-colors"
@@ -200,8 +199,8 @@ export default function Navbar() {
                   </AnimatePresence>
                 </div>
               ) : (
-                <button onClick={loginWithGoogle} className="btn-primary text-xs py-2 px-4">
-                  ⚔ Đăng nhập
+                <button onClick={loginWithGoogle} className="btn-primary text-xs py-2 px-4 flex items-center gap-1.5">
+                  <CrossedSwords size={14} /> Đăng nhập
                 </button>
               )}
             </nav>
@@ -257,7 +256,9 @@ export default function Navbar() {
 
             <nav className="flex flex-col items-center justify-center flex-1 gap-6 px-6 py-12"
                  role="navigation" aria-label="Menu di động">
-              <div className="divider-ornate w-48"><span>⚔</span></div>
+              <div className="flex items-center gap-2 justify-center">
+                <CrossedSwords size={16} />
+              </div>
 
                   {NAV_LINKS.map((link, i) => {
                 const isPage   = link.href.startsWith('/')
@@ -335,7 +336,7 @@ export default function Navbar() {
                     onClick={() => { loginWithGoogle(); setMobileOpen(false) }}
                     className="btn-primary"
                   >
-                    ⚔ Đăng nhập Google
+                    <CrossedSwords size={16} /> Đăng nhập Google
                   </button>
                 )}
               </motion.div>

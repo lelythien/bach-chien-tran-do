@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
+import CrossedSwords from '@/components/CrossedSwords'
 
 // Stable particles
 const PARTICLES = Array.from({ length: 20 }, (_, i) => ({
@@ -140,7 +142,7 @@ export default function HeroSection() {
         <span className="absolute bottom-16 right-6 text-parchment-400/25 text-2xl select-none">✦</span>
 
         {/* ── Content ── */}
-        <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto pt-20">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 pt-20 pb-10 flex flex-col items-center text-center">
 
           {/* Pre-title */}
           <motion.div custom={0} initial="hidden" animate="visible" variants={fadeUp}
@@ -156,7 +158,7 @@ export default function HeroSection() {
           <motion.h1
             custom={0.15} initial="hidden" animate="visible" variants={fadeUp}
             className="font-cinzel font-black text-parchment-200 leading-none mb-3
-                       text-5xl sm:text-6xl md:text-7xl lg:text-8xl"
+                       text-6xl sm:text-7xl md:text-8xl lg:text-9xl"
             style={{
               textShadow: '0 0 80px rgba(201,163,106,0.35), 0 4px 24px rgba(0,0,0,0.9)',
               letterSpacing: '0.06em',
@@ -172,7 +174,7 @@ export default function HeroSection() {
 
           {/* Divider */}
           <motion.div custom={0.3} initial="hidden" animate="visible" variants={fadeUp}
-            className="flex items-center justify-center gap-3 my-5">
+            className="flex items-center gap-3 my-5">
             <span className="h-px w-16 sm:w-24 bg-gradient-to-r from-transparent to-parchment-400/50" />
             <span className="text-parchment-400 text-xl">⚜</span>
             <span className="h-px w-16 sm:w-24 bg-gradient-to-l from-transparent to-parchment-400/50" />
@@ -200,7 +202,7 @@ export default function HeroSection() {
               className="btn-primary w-full sm:w-auto justify-center py-4 px-8 text-sm"
               aria-label="Pre-order ngay"
             >
-              <span>⚔</span>
+              <CrossedSwords size={18} />
               <span>Pre-order — Ưu đãi sớm</span>
             </a>
             <Link
@@ -264,7 +266,7 @@ export default function HeroSection() {
               onClick={e => { e.preventDefault(); document.getElementById('order')?.scrollIntoView({ behavior: 'smooth' }) }}
               className="btn-primary flex-1 justify-center py-3 text-xs"
             >
-              ⚔ Pre-order ngay
+              <CrossedSwords size={14} /> Pre-order ngay
             </a>
             <Link href="/rules" className="btn-ghost flex-1 justify-center py-3 text-xs">
               📜 Luật chơi

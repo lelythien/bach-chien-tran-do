@@ -69,10 +69,9 @@ export const PREORDER_STATS = {
 
 // ─── Rule Preview Placeholders ────────────────────────────────
 export const RULE_PLACEHOLDERS = [
-  { id: 1, title: 'Thiết lập bàn cờ',   aspect: 'landscape' },
-  { id: 2, title: 'Các loại quân bài',   aspect: 'portrait' },
-  { id: 3, title: 'Cơ chế di chuyển',    aspect: 'landscape' },
-  { id: 4, title: 'Giao tranh',          aspect: 'portrait' },
-  { id: 5, title: 'Chiến thắng',         aspect: 'landscape' },
-  { id: 6, title: 'Thẻ kỹ năng',         aspect: 'portrait' },
+  { id: 1, title: 'Thiết lập bàn cờ',   aspect: 'square',    src: '/images/game-board.jpg'    },
+  { id: 2, title: 'Giao tranh',         aspect: 'landscape', src: '/images/game-play.jpg'     },
+  { id: 3, title: 'Các loại thẻ bài',   aspect: 'landscape', src: '/images/game-cards.jpg'    },
+  { id: 4, title: 'Tướng lĩnh',         aspect: 'landscape', src: '/images/game-generals.jpg' },
 ] as const
+

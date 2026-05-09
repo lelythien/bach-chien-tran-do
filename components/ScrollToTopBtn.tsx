@@ -19,7 +19,8 @@ export default function ScrollToTopBtn() {
       {visible && (
         <motion.button
           initial={{ opacity: 0, scale: 0.8, y: 10 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
+          animate={{ opacity: 0.3, scale: 1, y: 0 }}
+          whileHover={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 0.8, y: 10 }}
           transition={{ duration: 0.25 }}
           onClick={scrollTop}

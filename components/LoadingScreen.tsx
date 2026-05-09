@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import CrossedSwords from '@/components/CrossedSwords'
 
 export default function LoadingScreen() {
   const [show, setShow] = useState(true)
@@ -46,10 +47,9 @@ export default function LoadingScreen() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2, type: 'spring', stiffness: 180 }}
-              className="text-6xl"
               aria-hidden="true"
             >
-              ⚔
+              <CrossedSwords size={72} />
             </motion.div>
 
             {/* Title */}

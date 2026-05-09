@@ -9,6 +9,7 @@ import { usePreorderCount }  from '@/lib/hooks/usePreorderCount'
 import { usePreorderStatus } from '@/lib/hooks/usePreorderStatus'
 import { createPreorder }    from '@/lib/services/firestoreService'
 import LoginRequiredModal    from '@/components/LoginRequiredModal'
+import CrossedSwords         from '@/components/CrossedSwords'
 
 const ORDER_URL = process.env.NEXT_PUBLIC_ORDER_URL ?? 'https://coolvietnam.vn'
 
@@ -311,7 +312,7 @@ export default function OrderPreviewSection() {
                         whileTap={{ scale: 0.97 }}>
                         {submitting
                           ? <><Loader size={16} className="animate-spin" /><span>Đang xử lý...</span></>
-                          : <><span>⚔</span><span>Pre-order — Ưu đãi sớm</span></>
+                          : <><CrossedSwords size={16} /><span>Pre-order — Ưu đãi sớm</span></>
                         }
                       </motion.button>
                     )}

@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
 import { useAuth } from '@/lib/authContext'
+import CrossedSwords from '@/components/CrossedSwords'
 
 interface Props {
   isOpen:   boolean
@@ -56,7 +57,7 @@ export default function LoginRequiredModal({ isOpen, onClose, message }: Props) 
 
               {/* Icon & Title */}
               <div className="text-center mb-6">
-                <div className="text-5xl mb-3">⚔</div>
+                <div className="flex justify-center mb-3"><CrossedSwords size={56} /></div>
                 <h3 className="font-cinzel font-bold text-earth-500 text-xl mb-2">
                   Chiến binh chưa xác danh
                 </h3>

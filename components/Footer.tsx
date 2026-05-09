@@ -2,6 +2,7 @@
 
 import { Facebook } from 'lucide-react'
 import { SITE_NAME } from '@/lib/constants'
+import CrossedSwords from '@/components/CrossedSwords'
 
 const SOCIAL = [
   { icon: Facebook, label: 'Facebook', href: 'https://web.facebook.com/coolvietnambiz/' },
@@ -25,7 +26,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
-              <span className="text-parchment-400 text-2xl">⚔</span>
+              <CrossedSwords size={28} />
               <span className="font-cinzel font-bold text-parchment-200 text-lg tracking-widest">
                 {SITE_NAME}
               </span>

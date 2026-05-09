@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ZoomIn } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
 import { RULE_PLACEHOLDERS } from '@/lib/constants'
 
 export default function RulePreviewSection() {
@@ -48,7 +50,7 @@ export default function RulePreviewSection() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {RULE_PLACEHOLDERS.map((item, i) => (
             <motion.div
               key={item.id}
@@ -60,30 +62,25 @@ export default function RulePreviewSection() {
                 group relative overflow-hidden rounded-sm cursor-pointer
                 border border-parchment-400/50 hover:border-parchment-400
                 transition-all duration-300
-                ${i === 0 ? 'col-span-2 row-span-2' : ''}
               `}
               style={{
-                aspectRatio: i === 0 ? '16/10' : item.aspect === 'portrait' ? '3/4' : '4/3',
+                aspectRatio: '4/3',
                 background: 'linear-gradient(135deg, #3B2A1E 0%, #2A1C12 100%)',
               }}
               onClick={() => setLightbox(i)}
             >
-              {/* Placeholder content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
-                <div className="text-parchment-400/30 text-4xl mb-2">📷</div>
-                <p className="font-cinzel text-parchment-300/40 text-xs tracking-wider">
-                  {item.title}
-                </p>
-                <p className="font-garamond text-parchment-300/25 text-xs mt-1">
-                  Thêm ảnh tại đây
-                </p>
-              </div>
+              <Image
+                src={item.src}
+                alt={item.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
 
               {/* Hover overlay */}
               <div
                 className="absolute inset-0 flex items-center justify-center gap-2
                            opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{ background: 'rgba(59,42,30,0.7)' }}
+                style={{ background: 'rgba(59,42,30,0.6)' }}
               >
                 <ZoomIn className="text-parchment-200" size={24} />
                 <span className="font-cinzel text-parchment-200 text-sm tracking-wider">
@@ -93,11 +90,11 @@ export default function RulePreviewSection() {
 
               {/* Label */}
               <div
-                className="absolute bottom-0 left-0 right-0 px-3 py-2
+                className="absolute bottom-0 left-0 right-0 px-4 py-3
                            opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{ background: 'linear-gradient(transparent, rgba(30,15,5,0.85))' }}
+                style={{ background: 'linear-gradient(transparent, rgba(30,15,5,0.9))' }}
               >
-                <p className="font-cinzel text-parchment-200 text-xs tracking-wider">
+                <p className="font-cinzel text-parchment-200 text-sm tracking-wider">
                   {item.title}
                 </p>
               </div>
@@ -112,10 +109,10 @@ export default function RulePreviewSection() {
           viewport={{ once: true }}
           className="text-center mt-10"
         >
-          <button className="btn-earth">
+          <Link href="/rules" className="btn-earth inline-flex items-center gap-2">
             <span>📖</span>
             <span>Xem toàn bộ luật chơi</span>
-          </button>
+          </Link>
         </motion.div>
       </div>
 
@@ -141,14 +138,13 @@ export default function RulePreviewSection() {
               }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <div className="text-parchment-400/30 text-6xl mb-4">📷</div>
-                <p className="font-cinzel text-parchment-300/50 text-sm tracking-wider">
-                  {RULE_PLACEHOLDERS[lightbox]?.title}
-                </p>
-                <p className="font-garamond text-parchment-300/30 text-xs mt-2">
-                  Ảnh sẽ hiển thị tại đây
-                </p>
+              <div className="absolute inset-0">
+                <Image
+                  src={RULE_PLACEHOLDERS[lightbox].src}
+                  alt={RULE_PLACEHOLDERS[lightbox].title}
+                  fill
+                  className="object-contain"
+                />
               </div>
               <button
                 onClick={() => setLightbox(null)}
