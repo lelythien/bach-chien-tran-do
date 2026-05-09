@@ -7,7 +7,7 @@ import { GrowthChart, RatingChart } from '@/components/admin/AdminCharts'
 import { getPreordersByDay } from '@/lib/services/preorderService'
 import { getRatingDistribution } from '@/lib/services/feedbackService'
 
-const GOAL = Number(process.env.NEXT_PUBLIC_PREORDER_GOAL ?? 1000)
+const GOAL = Number(process.env.NEXT_PUBLIC_PREORDER_GOAL ?? 119)
 
 export default function AdminDashboardPage() {
   const { preorderCount, feedbackTotal, feedbackPending, userCount, loading } = useAdminStats()

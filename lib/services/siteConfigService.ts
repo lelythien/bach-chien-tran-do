@@ -15,7 +15,7 @@ export const DEFAULT_SITE_CONFIG: SiteConfigDoc = {
     gameDescription: 'Lấy cảm hứng từ những trận chiến lịch sử thời Trần, mang lịch sử dân tộc sống dậy qua từng quân cờ.',
   },
   order: {
-    preorderGoal:  1000,
+    preorderGoal:  119,
     orderUrl:      process.env.NEXT_PUBLIC_ORDER_URL ?? 'https://coolvietnam.vn',
     projectStatus: 'Đang kêu gọi preorder',
   },
@@ -32,7 +32,7 @@ export const DEFAULT_SITE_CONFIG: SiteConfigDoc = {
     { id: '1', question: 'Bao nhiêu người chơi?',     answer: '2 người chơi đối kháng trực tiếp.',                                 order: 1 },
     { id: '2', question: 'Điều kiện chiến thắng?',    answer: 'Chiếm 25 ô trên bản đồ hoặc kéo chỉ số TT của đối thủ về 0%.',      order: 2 },
     { id: '3', question: 'Có những loại quân nào?',   answer: '5 loại quân: Bộ binh, Kỵ binh, Xa binh, Thủy binh, Tướng quân.',    order: 3 },
-    { id: '4', question: 'Bao giờ phát hành?',        answer: 'Dự kiến phát hành sau khi đạt 1000 preorder. Theo dõi để cập nhật!', order: 4 },
+    { id: '4', question: 'Bao giờ phát hành?',        answer: 'Dự kiến phát hành sau khi đạt 119 preorder. Theo dõi để cập nhật!', order: 4 },
     { id: '5', question: 'Ship toàn quốc không?',     answer: 'Có, chúng tôi giao hàng toàn quốc.',                                  order: 5 },
   ],
 }

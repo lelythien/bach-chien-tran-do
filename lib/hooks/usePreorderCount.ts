@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { collection, onSnapshot, query, where, getCountFromServer } from 'firebase/firestore'
 import { db } from '@/lib/firebase'
 
-const GOAL = Number(process.env.NEXT_PUBLIC_PREORDER_GOAL ?? 1000)
+const GOAL = Number(process.env.NEXT_PUBLIC_PREORDER_GOAL ?? 119)
 
 interface PreorderCountState {
   count:    number

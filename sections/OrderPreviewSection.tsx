@@ -62,6 +62,7 @@ const GAME_COMPONENTS = [
   { icon: '🔴',  name: '267 Token',            qty: '267 token' },
   { icon: '📦',  name: 'Hộp tre Thạch Xá',    qty: 'Thủ công' },
   { icon: '📖',  name: 'Rulebook bản in',      qty: '1 quyển' },
+  { icon: '🎲',  name: '2 Xúc xắc',            qty: '2 viên' },
 ]
 
 
@@ -252,7 +253,7 @@ export default function OrderPreviewSection() {
                 <div className="grid grid-cols-3 gap-4 py-6 border-y border-parchment-400/20">
                   {[
                     { num: isLoading ? '...' : `${count}`, label: 'Chiến binh' },
-                    { num: '21', label: 'Ngày còn lại' },
+                    { num: '6', label: 'Ngày còn lại' },
                     { num: isLoading ? '...' : `${percent}%`, label: 'Hoàn thành' },
                   ].map(({ num, label }) => (
                     <div key={label} className="text-center">
@@ -268,7 +269,7 @@ export default function OrderPreviewSection() {
                   <motion.span animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity }}
                     className="text-crimson-300 mt-0.5 text-lg flex-shrink-0">🔥</motion.span>
                   <p className="font-garamond text-parchment-300/80 text-base leading-relaxed">
-                    Chỉ còn <strong className="text-crimson-300">21 ngày</strong> để pre-order với giá ưu đãi.
+                    Chỉ còn <strong className="text-crimson-300">6 ngày</strong> để pre-order với giá ưu đãi.
                     Hỗ trợ làng nghề truyền thống Việt Nam!
                   </p>
                 </div>
@@ -283,8 +284,7 @@ export default function OrderPreviewSection() {
                       'Hộp game tre Thạch Xá thủ công',
                       'Bộ quân bài 120 tướng lĩnh',
                       'Bản đồ chiến trận vải canvas',
-                      'Sổ tay lịch sử độc quyền',
-                      'Tặng kèm phiên bản Kickstarter',
+                      'Rulebook xịn, hình ảnh hướng dẫn dễ hiểu',
                     ].map(item => (
                       <li key={item} className="flex items-start gap-2">
                         <span className="text-parchment-400 mt-0.5 text-sm flex-shrink-0">✦</span>
