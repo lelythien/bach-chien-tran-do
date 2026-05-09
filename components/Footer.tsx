@@ -1,18 +1,12 @@
 'use client'
 
 import { Facebook } from 'lucide-react'
-import { SITE_NAME } from '@/lib/constants'
+import { SITE_NAME, NAV_LINKS } from '@/lib/constants'
 import CrossedSwords from '@/components/CrossedSwords'
+import Link from 'next/link'
 
 const SOCIAL = [
   { icon: Facebook, label: 'Facebook', href: 'https://web.facebook.com/coolvietnambiz/' },
-]
-
-const FOOTER_LINKS = [
-  { label: 'Trang chủ',  href: '#hero' },
-  { label: 'Luật chơi', href: '#luat-choi' },
-  { label: 'Order',     href: '#order' },
-  { label: 'Feedback',  href: '#feedback' },
 ]
 
 export default function Footer() {
@@ -57,15 +51,15 @@ export default function Footer() {
               Điều hướng
             </h4>
             <ul className="space-y-2">
-              {FOOTER_LINKS.map((l) => (
+              {NAV_LINKS.map((l) => (
                 <li key={l.href}>
-                  <a
+                  <Link
                     href={l.href}
                     className="font-garamond text-parchment-300 hover:text-parchment-200
                                transition-colors text-sm"
                   >
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

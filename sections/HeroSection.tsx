@@ -142,7 +142,7 @@ export default function HeroSection() {
         <span className="absolute bottom-16 right-6 text-parchment-400/25 text-2xl select-none">✦</span>
 
         {/* ── Content ── */}
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 pt-20 pb-10 flex flex-col items-center text-center">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 pt-24 pb-28 flex flex-col items-center text-center">
 
           {/* Pre-title */}
           <motion.div custom={0} initial="hidden" animate="visible" variants={fadeUp}
@@ -238,8 +238,8 @@ export default function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4 }}
           onClick={scrollToNext}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1
-                     text-parchment-400/50 hover:text-parchment-400 transition-colors"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1
+                     text-parchment-400/50 hover:text-parchment-400 transition-colors cursor-pointer"
           style={{ animation: 'float 3s ease-in-out infinite' }}
           aria-label="Cuộn xuống"
         >

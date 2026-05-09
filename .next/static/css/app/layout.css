@@ -689,6 +689,9 @@ video {
 .z-\[9999\] {
   z-index: 9999;
 }
+.z-20 {
+  z-index: 20;
+}
 .mx-12 {
   margin-left: 3rem;
   margin-right: 3rem;
@@ -1664,6 +1667,12 @@ video {
 }
 .pt-8 {
   padding-top: 2rem;
+}
+.pb-28 {
+  padding-bottom: 7rem;
+}
+.pt-24 {
+  padding-top: 6rem;
 }
 .text-left {
   text-align: left;
