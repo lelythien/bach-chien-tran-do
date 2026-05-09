@@ -26,31 +26,31 @@ export default function CrossedSwords({ size = 24, className = '', style }: Cros
       <defs>
         {/* Steel blade gradient — left sword */}
         <linearGradient id={`blade-l-${id}`} x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%"   stopColor="#B8C4CC" />
-          <stop offset="30%"  stopColor="#E8EEF2" />
-          <stop offset="55%"  stopColor="#F5F8FA" />
-          <stop offset="80%"  stopColor="#C8D4DA" />
+          <stop offset="0%" stopColor="#B8C4CC" />
+          <stop offset="30%" stopColor="#E8EEF2" />
+          <stop offset="55%" stopColor="#F5F8FA" />
+          <stop offset="80%" stopColor="#C8D4DA" />
           <stop offset="100%" stopColor="#8A9BA5" />
         </linearGradient>
         {/* Steel blade gradient — right sword */}
         <linearGradient id={`blade-r-${id}`} x1="100%" y1="0%" x2="0%" y2="0%">
-          <stop offset="0%"   stopColor="#B8C4CC" />
-          <stop offset="30%"  stopColor="#E8EEF2" />
-          <stop offset="55%"  stopColor="#F5F8FA" />
-          <stop offset="80%"  stopColor="#C8D4DA" />
+          <stop offset="0%" stopColor="#B8C4CC" />
+          <stop offset="30%" stopColor="#E8EEF2" />
+          <stop offset="55%" stopColor="#F5F8FA" />
+          <stop offset="80%" stopColor="#C8D4DA" />
           <stop offset="100%" stopColor="#8A9BA5" />
         </linearGradient>
         {/* Gold guard gradient */}
         <linearGradient id={`guard-${id}`} x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%"   stopColor="#D4A017" />
-          <stop offset="40%"  stopColor="#F0C842" />
-          <stop offset="70%"  stopColor="#C9A020" />
+          <stop offset="0%" stopColor="#D4A017" />
+          <stop offset="40%" stopColor="#F0C842" />
+          <stop offset="70%" stopColor="#C9A020" />
           <stop offset="100%" stopColor="#8B6914" />
         </linearGradient>
         {/* Handle wrap */}
         <linearGradient id={`handle-${id}`} x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%"   stopColor="#5C3520" />
-          <stop offset="50%"  stopColor="#7A4E2D" />
+          <stop offset="0%" stopColor="#5C3520" />
+          <stop offset="50%" stopColor="#7A4E2D" />
           <stop offset="100%" stopColor="#3A1E10" />
         </linearGradient>
         {/* Drop shadow filter */}
